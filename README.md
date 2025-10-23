@@ -137,15 +137,32 @@ make run-frontend     # Run frontend locally
 
 ## Deployment
 
-### Backend (Render)
-- Configuration in `render.yaml`
-- Deploy to Render.com
-- Environment variables: `PYTHONPATH=/opt/render/project/src`
+### Quick Deploy to Production
 
-### Frontend (Vercel)
-- Deploy to Vercel
-- Environment variable: `NEXT_PUBLIC_API_BASE=<backend-url>`
-- Already configured for https://parlay-demo.vercel.app
+1. **Create GitHub Repository**:
+   ```bash
+   # Create repository on GitHub, then:
+   git remote set-url origin https://github.com/YOUR_USERNAME/parlay-tools-demo.git
+   git push -u origin main
+   ```
+
+2. **Deploy Backend to Render**:
+   - Connect GitHub repository to Render
+   - Root Directory: `backend`
+   - Build Command: `pip install -r requirements.txt`
+   - Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+
+3. **Deploy Frontend to Vercel**:
+   - Connect GitHub repository to Vercel
+   - Root Directory: `frontend`
+   - Environment Variable: `NEXT_PUBLIC_API_BASE=https://your-backend-url.onrender.com`
+
+### Production URLs
+- **Frontend**: https://parlay-demo.vercel.app
+- **Backend**: https://parlay-tools-backend.onrender.com
+- **API Docs**: https://parlay-tools-backend.onrender.com/docs
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 
 ## Sample API Response
 
