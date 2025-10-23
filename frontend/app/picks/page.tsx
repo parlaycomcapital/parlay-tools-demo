@@ -140,7 +140,7 @@ export default function Picks() {
           
           <div className="mt-6 text-sm text-gray-600">
             <p><strong>Expected Value (EV):</strong> The theoretical profit per unit bet over the long term.</p>
-            <p><strong>Value Rating:</strong> High Value (EV > 20%), Medium Value (EV 10-20%), Low Value (EV 5-10%)</p>
+            <p><strong>Value Rating:</strong> High Value (EV &gt; 20%), Medium Value (EV 10-20%), Low Value (EV 5-10%)</p>
           </div>
         </div>
       )}
